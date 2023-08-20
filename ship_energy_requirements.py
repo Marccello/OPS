@@ -10,19 +10,6 @@ import colorama
 colorama.init()
 
 
-def read_csv():
-    # Ask user for the directory and file name
-    directory = input("Enter the directory path where the CSV file is located: ")
-    filename = input("Enter the name of the CSV file: ")
-    try:
-        # Read the CSV file using pandas
-        df = pd.read_csv(f"{directory}/{filename}", sep=';')
-    except FileNotFoundError:
-        print('\033[91mFile not found!\033[m')
-        return read_csv()
-
-    return df, filename
-
 def compute_power(type, gt, oil_tk, chem_tk, gas_tk, blk, gcs, cont, roro, reefer, psgr, supp, fishing):
     power_required = 0
 
